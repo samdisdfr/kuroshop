@@ -67,10 +67,10 @@
                             <a class="nav-link" href="about.html">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Tienda</a>
+                            <a class="nav-link" href="shop.html">Catalogo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contactanos</a>
+                            <a class="nav-link" href="contact.html">Contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -158,26 +158,27 @@
         <div class="row py-5">
             <form class="col-md-9 m-auto" method="post" role="form">
                 <div class="row">
+                    <center><h1>Registro</h1></center>
                     <div class="form-group col-md-6 mb-3">
                         <label for="inputname">Nombre</label>
-                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Nombre">
+                        <input type="text" class="form-control mt-1" id="nombre" name="name" placeholder="Nombre">
                     </div>
                     <div class="form-group col-md-6 mb-3">
                         <label for="inputemail">Email</label>
-                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Email">
+                        <input type="email" class="form-control mt-1" id="correo" name="email" placeholder="Email">
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputsubject">Titulo</label>
-                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Titulo">
+                    <label for="inputsubject">Contraseña</label>
+                    <input type="text" class="form-control mt-1" id="contraseña" name="Contraseña" placeholder="Contraseña">
                 </div>
                 <div class="mb-3">
-                    <label for="inputmessage">Mensaje</label>
-                    <textarea class="form-control mt-1" id="message" name="message" placeholder="Mensaje" rows="8"></textarea>
+                    <label for="inputmessage">direcion de domicilio</label>
+                    <input class="form-control mt-1" id="direcion" name="direcion" placeholder="direcion de domicilio" rows="8"></input>
                 </div>
                 <div class="row">
                     <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>
+                        <button  onclick="guardar()" class="btn btn-success btn-lg px-3">crear cuenta</button>
                     </div>
                 </div>
             </form>
@@ -286,6 +287,8 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
+    <Script src="index.js"></Script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- End Script -->
 </body>
 
