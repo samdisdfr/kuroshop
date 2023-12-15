@@ -154,36 +154,52 @@
     <!-- Ena Map -->
 
     <!-- Start Contact -->
-    <div class="container py-5">
-        <div class="row py-5">
-            <form class="col-md-9 m-auto" method="post" role="form">
-                <div class="row">
-                    <center><h1>Registro</h1></center>
-                    <div class="form-group col-md-6 mb-3">
-                        <label for="inputname">Nombre</label>
-                        <input type="text" class="form-control mt-1" id="nombre" name="name" placeholder="Nombre">
-                    </div>
-                    <div class="form-group col-md-6 mb-3">
-                        <label for="inputemail">Email</label>
-                        <input type="email" class="form-control mt-1" id="correo" name="email" placeholder="Email">
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="inputsubject">Contraseña</label>
-                    <input type="text" class="form-control mt-1" id="contraseña" name="Contraseña" placeholder="Contraseña">
-                </div>
-                <div class="mb-3">
-                    <label for="inputmessage">direcion de domicilio</label>
-                    <input class="form-control mt-1" id="direcion" name="direcion" placeholder="direcion de domicilio" rows="8"></input>
-                </div>
-                <div class="row">
-                    <div class="col text-end mt-2">
-                        <button  onclick="guardar()" class="btn btn-success btn-lg px-3">crear cuenta</button>
-                    </div>
-                </div>
-            </form>
+    <div class="formulario">
+    <h1>Registro de Venta de Venta</h1>
+    <form id="formularioVenta">
+        <label for="usuarioId">nombre de usuario</label>
+        <input type="text" id="usuarioId" name="usuarioId" required>
+
+        <div id="productosContainer">
+            <!-- Aquí se agregarán dinámicamente los campos de producto -->
         </div>
-    </div>
+        
+        <button type="button" onclick="agregarProducto()">Agregar Producto</button>
+
+        <label for="fechaVenta">Fecha de Venta:</label>
+        <input type="date" id="fechaVenta" name="fechaVenta" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+    <script>
+        function agregarProducto() {
+            const productosContainer = document.getElementById('productosContainer');
+
+            const productoDiv = document.createElement('div');
+            productoDiv.innerHTML = `
+                <label for="productoId">Producto ID:</label>
+                <input type="text" name="productoId[]" required>
+
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" name="cantidad[]" required>
+
+                <label for="total">Total:</label>
+                <input type="number" name="total[]" step="0.01" required>
+
+                <button type="button" onclick="eliminarProducto(this)">Eliminar</button>
+            `;
+
+            productosContainer.appendChild(productoDiv);
+        }
+
+        function eliminarProducto(btnEliminar) {
+            const productosContainer = document.getElementById('productosContainer');
+            const productoDiv = btnEliminar.parentElement;
+            productosContainer.removeChild(productoDiv);
+        }
+    </script>
     <!-- End Contact -->
 
 

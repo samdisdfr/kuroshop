@@ -189,3 +189,14 @@ body, ul, li, p, a, label, input, div {
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {}
+
+.formulario{
+  background-color: transparent;
+  width: 60%;
+  height: 50vh;
+  margin: auto;
+}
+.formulario form{
+  display: flex;
+  flex-direction: column;
+}
